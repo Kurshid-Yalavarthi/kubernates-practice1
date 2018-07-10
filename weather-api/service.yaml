@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: weather-api
+    type: web
+  name: weather-api
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 3002
+  selector:
+    app: weather-api
+    type: web
+---

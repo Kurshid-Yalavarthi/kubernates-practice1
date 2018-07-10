@@ -1,0 +1,39 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: weather-api
+    name: weather-api
+    type: web
+  name: weather-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: weather-api
+      name: weather-api
+      type: web
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: weather-api
+        name: weather-api
+        type: web
+      name: weather-api
+    spec:
+      containers:
+      - image: gcr.io/sagarika-arcus/weather-api
+        imagePullPolicy: Always
+        name: weather-api
+        ports:
+        - containerPort: 3002
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      securityContext: {}
+      terminationGracePeriodSeconds: 30

@@ -1,0 +1,46 @@
+@media screen and (min-width: 1000px) {
+    body {
+        width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .forecast-detail div {
+        text-align: center;
+        padding: 20px;
+        width: 25%;
+        float: left;
+    }
+}
+
+@media screen and (max-width: 999px) {
+    body {
+        width: 85%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .forecast-detail div {
+        text-align: center;
+        padding: 20px;
+        width: 100%;
+        float: left;
+    }
+}
+
+footer {
+    bottom: 0;
+    height: 100px;
+    left: 0;
+    position: relative;
+    width: 100%;
+    clear: both;
+}
+
+footer img {
+    float: right;
+}
+
+footer a {
+    float: left;
+}
